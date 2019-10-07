@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <button v-on:click="showAlert('Bilal')">Eventi Dinle</button>
+        <!-- Burada increaseCounter metodunu çağırmak yerine direkt olarak js kodu yazabiliriz . yani counter++ şeklinde. -->
+        <button v-on:click="increaseCounter">Arttır</button>
+        <button v-on:click="counter+=5">5 Arttır</button>
+        <p>{{counter}}</p>
+        <p>{{ counter > 10 ? "counter 10'dan büyüktür" : "counter 10'dan küçüktür."}}</p>
+        <!-- Eğer metodun içine parametre gönderip event dinlemek istiyorsak => eventi parametre olarak $event şeklinde göndermeliyiz. -->
+        <p v-on:mousemove="updateCoords(2,$event)">Koodinatlar : {{x}},{{y}}
+            <span v-on:mousemove.stop>metodu durdur.</span>
+        </p>
+        <!-- enter ve a harfinde tetiklenir -->
+        <input type="text" v-on:keyup.enter.a="showAlert">
+
+    </div>
+
+    <script type="text/javascript">
+        new Vue({
+            el: "#app",
+            data: {
+                counter:0,
+                x:0,
+                y:0
+            },
+            methods: {
+                showAlert : function (param1) {
+                    alert(param1);
+                    // alert(param1.target.value);
+                },
+                increaseCounter : function () {
+                    return this.counter++;
+                },
+                updateCoords : function (step,event) {
+                    this.counter+= step;
+
+                    this.x=event.clientX;
+                    this.y=event.clientY;
+                }
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>

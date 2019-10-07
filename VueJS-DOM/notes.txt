@@ -1,0 +1,17 @@
+v-bind => attribute'lara data içerisinden veri aktarımını sağlar. veriyi bind eder.
+v-once => data'da tanımlanan veri bir metod taradından değiştirilse bile ilk halini kullanmamızı sağlar.
+v-html => {{}} içerisine veriler her zaman string olarak döndüğü için datadan html attirbute almak istersek kullanmamız gerken directive
+v-on => eventleri bind etmeye yarayan directive
+$event => evnetlerin metodlarıda default dönüş değeri olarak event dönebilir. ancak başka bir parametre de ekleyeceksek event i en son parametre olarak $event şeklinde yazmalıyız.
+.stop => eventin çalışmasını engeller. ör: v-on:mousemove.stop
+{{ js code }} => {{ counter > 10 ? "counter 10'dan büyüktür" : "counter 10'dan küçüktür."}} tek satır js kodu yazabilisin
+v-model => data içindeki veri ile html attribute'unu bind eder.
+computed properties => metod gibi çalışıp data gibi davranır. metohods'tan farklı olarak içersinde bulunan kodu analiz edip içerideki data değişmişse kodu çalıştırır.
+watch properties => data içindeki bir değeri gözlemlemeyi sağlar. Data değeri değişirse devreye girer.
+
+Kısaltmalar => {
+    v-on:click => @click ,
+    v-bind:href => :href
+}
+
+:class => css claslarını data ile hükmedebilmek için kullandığımız yapı

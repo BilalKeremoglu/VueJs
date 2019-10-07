@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h1 v-once>{{title}}</h1>
+        <hr>
+        <input type="text" v-on:input="changeTitle">
+        <p>{{description}}</p>
+        <p>{{hello()}}</p>
+        <p v-once>{{hello2()}}<a v-bind:href="link">v-bind ile html attribute'ını bağlama</a></p>
+        <p>{{hello3()}}</p>
+        <p v-html="h4Yazi"></p>
+    </div>
+
+    <script type="text/javascript">
+        new Vue({
+            el: "#app",
+            data: {
+                title: "merhaba bilal",
+                description: "Acıklama verisi burda",
+                link:"https://www.google.com.tr",
+                h4Yazi:"<h4> html elementlerini vuejs içinden gönderiyoruz. </h4>"
+            },
+            methods: {
+                changeTitle: function (event) {
+                    this.description = event.target.value;
+                },
+                hello: function () {
+                    return "Fonksiyondan dönen deger."
+                },
+                hello2: function () {
+                    return this.title+ " metodun içinde data içindeki title'ı çağırıyoruz.";
+                },
+                hello3: function () {
+                    //v-once kullanırsak parametre ilk değerini taşır.Aşşağıdaki değişiklik sadece o metodu etkiler.
+                    this.title="title'ı metod içinde update ediyoruz."
+                    return this.title;
+                }
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>

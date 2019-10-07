@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+
+        <button v-on:click="counter++">Arttır</button>
+        <button v-on:click="counter--">Azalt</button>
+        <button v-on:click="secondCounter++">Azalt</button>
+        <p>Counter : {{counter}} | {{secondCounter}}</p>
+        <p>{{result()}} | {{output}} </p>
+
+
+    </div>
+
+    <script type="text/javascript">
+        new Vue({
+            el: "#app",
+            data: {
+                counter:0,
+                secondCounter:0
+            },
+            methods: {
+                result : function(){
+                    console.log("metot çalıştı 1");
+                    return this.counter > 10 ? "10'dan büyüktür" : "10'dan küçüktür.";
+                }
+            },
+            computed:{
+                output : function(){
+                    console.log("metot çalıştı 2");
+                    return this.counter > 10 ? "10'dan büyüktür" : "10'dan küçüktür.";
+                }
+            },
+            watch :{
+                counter : function(value){
+                    vm=this;
+                    setTimeout(function(){
+                        vm.counter=0;
+                    },1500)
+                }
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>
