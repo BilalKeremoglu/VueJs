@@ -1,0 +1,7 @@
+v-if => aldığı değer true oldukçe tetiklenir. Bildiğimiz if
+v-else => bildiğimiz else :D
+v-show => v-if html attribute'ünü dom'dan diler remove yapar. v-show ise html attribute'ünü kaldırmaaz css clasına display:none ekler
+v-for => bildiğimiz for döngüsü ör: v-for="item in items" //items is array 
+index no => eleman numarasını almak için v-for="(item,iter) in items"
+<template> => render edilmeten html attribute'ü :D 
+:key="list" => vuejs normalde arraylerde elemanların değerlerini değil de index numaralarını tutar. Ancak bu ifadeyi eklersek artık elemanların kendisi tutacaktır. Böylece bir eleman değişikliği yaptığımızda sadece indexleri değil deperileri değişecektir.

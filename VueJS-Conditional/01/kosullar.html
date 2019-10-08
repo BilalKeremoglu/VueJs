@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- v-if="!show" yapılabilir fakat v-else yapısı da burda kullanılabilir. -->
+        <p v-if="show">Beni Görebilirsin</p>
+        <p v-else>Beni Görebilir misin ?</p>
+
+        <button @click="show=!show">Göster/Gizle</button>
+
+        <p v-if="sayi > 10">Sayı 10'dan büyüktür.</p>
+        <p v-else-if="sayi < 10">Sayı 10'dan küçüktür.</p>
+        <p v-else>Sayı 10'a eşittir.</p>
+        <hr>
+
+        <button @click="showP= !showP">Göster</button>
+        <p v-show="showP">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam rem alias totam cumque sit voluptatum ullam minus nulla veritatis quaerat obcaecati delectus quo mollitia consequatur, soluta aliquam sapiente libero ea?</p>
+
+
+
+    </div>
+
+    <script type="text/javascript">
+        new Vue({
+            el: "#app",
+            data : {
+                show : false,
+                sayi:10,
+                showP : false
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>

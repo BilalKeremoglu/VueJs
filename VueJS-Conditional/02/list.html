@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="(item,iter) in products">{{iter+1}} - {{item}}</li>
+        </ul>
+
+        <hr>
+
+        <ul>
+            <li v-for="(item,iter) in persons" :key="persons">{{iter+1}} - {{item.name}} - {{item.email}}</li>
+        </ul>
+        <hr>
+        <ul>
+            <li v-for="(item,iter) in persons">
+                <ul>
+                    <li v-for="(i,key) in item">{{key}} : {{i}}</li>
+                </ul>
+                <p>------- ------- -------</p>
+            </li>
+        </ul>
+        <hr>
+
+        <span v-for="i in 5">{{i}}</span>
+
+
+    </div>
+
+    <script type="text/javascript">
+        new Vue({
+            el: "#app",
+            data: {
+                products: ["Monitör", "Klavye", "Askı", "Masa"],
+                persons: [
+                    {
+                        name: "Bilal",
+                        email: "bilalkeremoglu@gmail.com"
+                    },
+                    {
+                        name: "Ayça",
+                        email: "aycakar@gmail.com"
+                    },
+                    {
+                        name: "noname",
+                        email: "noname@noname.com"
+                    }
+                ]
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>
