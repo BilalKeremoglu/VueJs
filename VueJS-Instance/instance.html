@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        
+        <h1 ref="heading">{{title}}</h1>
+        <button v-on:click="show">Paragrafı göster!</button>
+        <p v-if="showParag">Her zaman gözükmem :)</p>
+        <hello></hello>
+
+    </div>
+
+    <div id="app2">
+        
+        <h1 ref="heading">{{title}}</h1>
+        <button v-on:click="changeTitle">Paragrafı göster!</button>
+        <p v-if="showParag">Her zaman gözükmem :)</p>
+
+    </div>
+
+    <script type="text/javascript">
+        var vm1 = new Vue({
+            el: "#app",
+            data: {
+                title : "VueJS Instance",
+                showParag : false
+            },
+            methods : {
+                updateTitle: function(title){
+                    this.title=title;
+                },
+                show: function(){
+                    this.showParag=true;
+                    this.updateTitle('VueJS Instance güncellendi');
+                }
+            },
+            computed :{
+                lowercaseTitle : function(){
+                    return this.title.toLowerCase();
+                }
+            },
+            watch :  {
+                title : function(value){
+                    alert('Title değişti, yeni değer :'+value);
+                }
+            }
+        });
+        console.log(vm1.$data);
+        var vm2 = new Vue({
+            el: "#app2",
+            data: {
+                title : "VueJS Instance 2",
+                showParag : false
+            },
+            methods : {
+                updateTitle: function(title){
+                    this.title=title;
+                },
+                changeTitle: function(){
+                    vm1.title = "instance 2 tarafından değiştirildi."
+                }
+            },
+            computed :{
+                lowercaseTitle : function(){
+                    return this.title.toLowerCase();
+                }
+            },
+            watch :  {
+                title : function(value){
+                    alert('Title değişti, yeni değer :'+value);
+                }
+            }
+        });
+
+        Vue.component("hello",{
+            template: "<h1>Merhaba ...</h1>"
+        });
+
+    </script>
+
+</body>
+
+</html>

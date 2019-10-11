@@ -1,0 +1,20 @@
+Multiple Vue Instace tanımlanabilir mi ? => Evet tanımlanabilir.
+Vue Instace'a native JS ile erişilebilir mi ? => Evet erişilebilir.
+=> instance'ı bir değişkene attıktan sonra değişken_ismi.data şeklinde diğer instance'a erişebiliriz.
+
+new Vue() instance'ı içerisinde tanımlanan herhangi bir metot veya değişkene dışarıdan erişebiliyoruz. Ancak dışarıda native olarak tanımlanan
+değişken ve metotlara vue instance'ı içerisinde erişemiyoruz. Bunun sebebi içe watcher layer.
+$refs => html attribute larına erişimi sağlar
+
+component => Vue.component('name',{obj});
+
+Vue Instace Lifecycle = {
+    beforeCreate() => Vue Instace derlenmeden önce yapmak istediğimiz bir şey varsa kullanılacak metot,
+    created() => Vue Instace çalışmaya başladığı anda yapmak istediğimiz bir şey varsa kullanılacak metot,
+    beforeMount() => Instace derleniyor ancak kullanıcı DOM'da görüntüyü almıyor. O vakitte yapmak istediklerimiz için kullanılacak metot,
+    mounted() => DOM da görüntü geldikten sonra yapmak istediğimiz bir şey varsa kullanılacak metot,
+    beforeUpdate() => DOM güncellenmeden önce yapmak istediğimiz bir şey varsa kullanılacak metot,
+    updated() => DOM güncellendikten sonra yapmak istediğimiz bir şey varsa kullanılacak metot,
+    beforeDestroy() => Destroy edilmeden önce yapmak istediğimiz bir şey varsa kullanılacak metot,
+    destroyed() => Destroy edildikten sonra yapmak istediğimiz bir şey varsa kullanılacak metot
+}
