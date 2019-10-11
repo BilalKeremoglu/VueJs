@@ -1,0 +1,20 @@
+Neden development server'a ihtiyacımız var ? => projemize çift çıklayıp açtımızda çalısan protokol http değil file protokolüdür. Ancak biz web uygulamasında http protokolünü kullanacağımız için development server şarttır.
+
+Kurulum = {
+    npm install -g vue-cli ,
+    vue init webpack-simple dosyaAdı ,
+    cd dosyaAdı ,
+    npm install ,
+    npm run dev 
+}
+
+Proje dosyaları yapısı = {
+    node_modules => npm paketlerinin bulunduğu dosya,
+    src => proje kodlarımınız bulunduğu dosya,
+    .babelrc => es6 yı es5 e çeviren dosya,
+    index.html => yayına çıktığmızdaki simülasyon,
+    package.json => paketlerin isimlerinin tutulduğu json,
+    webpack.config.js => development server'in ayarlarının bulunduğu dosya
+}
+
+App.vue => içerisinde template script ve style kalıpları bulunan yapı
