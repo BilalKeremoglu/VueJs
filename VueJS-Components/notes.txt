@@ -1,0 +1,6 @@
+=> Vue instance'ı dışında tanımlanan data property'leri güncellendiğinde oluşturulan tüm componentler bu güncellemden etkilenir,
+Bu sebepten data property'lerini component içerisindeki vue instance'ın içerisinde tanımlamamız gerkmektedir.
+Ayrıca data property'leri bir function'dan gelmelidir.
+
+=> Local variable oluşturma. comp'i instance içerisinde çağırarak.components : {"my-cmp" : cmp}
+
