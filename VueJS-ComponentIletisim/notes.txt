@@ -1,0 +1,8 @@
+parent -> child iletişimi => react'da da olduğu gibi props'ları kullanarak yapcağız.
+props ile alınan veri aynı data ile alınan gibi this.veri şeklinde erişilebilir.
+props validation => props:{name :[String,Array]} şeklinde kullanılabilir. Ya da props:{name :{type : String,required: true}} gibi
+
+child -> parent => this.$emit("data","text") parentta <p @data="...=$event"></p>
+
+child -> child => child -> parent -> child şeklinde olur . Direkt olarak child to chiel olmaz.
+
